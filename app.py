@@ -42,10 +42,22 @@ def login():
 @app.route("/logout", methods=["GET"])
 @login_required
 def logout():
-     logout_user()
-     return jsonify({"message": "Logout succesfuly"})
+    logout_user()
+    return jsonify({"message": "Logout succesfully"})
 
 @app.route("/user", methods=["POST"])
+@login_required
+def create_user():
+    data = request.json
+    username = data.get("username")
+    password = data.get("password")
+
+    if username and password:
+         user = User(username=username, password=password)
+         db.session.add(user)
+         db.session.commit()
+         return jsonify({"message": "User registered sucessfully"})
+    return jsonify({"message": "Invalid user details"}), 401
 
 @app.route("/hello-world", methods=["GET"])
 def hello_world():
