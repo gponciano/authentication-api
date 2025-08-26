@@ -3,6 +3,7 @@
 🛠️ Built With
 - Flask
 - SQL Alchemy
+- SQLite
 
 🚀 Features
 
