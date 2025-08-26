@@ -1,2 +1,9 @@
-# authentication-api
-Building an authentication API with Python and integrating to SQL Alchemy
+📘 Project Name: Authentication-API 
+
+🛠️ Built With
+
+🚀 Features
+
+📦 Deployment
+
+👨‍💻 Author
