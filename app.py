@@ -86,6 +86,16 @@ def update_user(id_user):
     return jsonify({"message": "User not found"}), 404
 
 
+@app.route("/user/<int:id_user>", methods=["DELETE"])
+@login_required
+def delete_user(id_user):
+    user = User.query.get(id_user)
+
+    if user:
+         return jsonify({"message": f"User {id_user} removed succesfully"})
+
+    return jsonify({"message": "User not found"}), 404
+
 @app.route("/hello-world", methods=["GET"])
 def hello_world():
     return "hello world"
