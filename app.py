@@ -46,13 +46,13 @@ def logout():
     return jsonify({"message": "Logout succesfully"})
 
 @app.route("/user", methods=["POST"])
-@login_required
+
 def create_user():
     data = request.json
     username = data.get("username")
     password = data.get("password")
 
-    if username and password:
+    if username and password and len(password) >= 8:
          user = User(username=username, password=password)
          db.session.add(user)
          db.session.commit()
