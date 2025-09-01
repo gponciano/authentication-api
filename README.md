@@ -3,7 +3,8 @@
 🛠️ Built With
 - Flask
 - SQL Alchemy
-- SQLite
+- MySQL
+- Docker
 
 🚀 Features
 
